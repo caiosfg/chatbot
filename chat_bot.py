@@ -19,14 +19,14 @@ trainer.train(
     "Eu auxilio no treinamento!"]
 )
 
-#Loop de atendimento
-print("Iniciando chat com um de nossos atendentes (sair para encerrar) :")
-while True:
-    user_input = input("Eu: ")
-    if user_input.lower() == 'sair':
-        break
-    response = chatbot.get_response(user_input)
-    print(f"RoboBot: {response}")
+def get_bot_response(user_input):
+    return str(chatbot.get_response(user_input))
 
-# infos
-#O ChatterBot aprende por similaridade de texto. Ele busca uma entrada parecida no que foi treinado e retorna a resposta associada. Quanto maior e mais bem estruturado o conjunto de dados, melhores serão as respostas.
+#Loop de atendimento
+# print("Iniciando chat com um de nossos atendentes (sair para encerrar) :")
+# while True:
+#     user_input = input("Eu: ")
+#     if user_input.lower() == 'sair':
+#         break
+#     response = chatbot.get_response(user_input)
+#     print(f"RoboBot: {response}")

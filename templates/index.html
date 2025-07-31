@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat com RoboBot</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #chat { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; }
+        .msg { margin: 5px 0; }
+        .user { color: blue; }
+        .bot { color: green; }
+    </style>
+</head>
+<body>
+    <h2>Chat com RoboBot</h2>
+    <div id="chat"></div>
+    <input type="text" id="messageInput" placeholder="Digite sua mensagem..." autofocus>
+    <button onclick="sendMessage()">Enviar</button>
+
+    <script>
+        function appendMessage(sender, text) {
+            const chat = document.getElementById('chat');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'msg ' + sender;
+            msgDiv.textContent = (sender === 'user' ? 'Você: ' : 'RoboBot: ') + text;
+            chat.appendChild(msgDiv);
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const userMessage = input.value.trim();
+            if (!userMessage) return;
+
+            appendMessage('user', userMessage);
+            input.value = '';
+
+            const response = await fetch('/get_response', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userMessage })
+            });
+
+            const data = await response.json();
+            appendMessage('bot', data.response);
+        }
+
+        document.getElementById('messageInput').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>
