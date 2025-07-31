@@ -2,23 +2,22 @@ from chatterbot import ChatBot #  bot em si
 from chatterbot.trainers import ListTrainer #  treinar o bot com uma lista de frases/respostas.
 
 chatbot = ChatBot('RoboBot') #  Cria uma instância
+trainer = ListTrainer(chatbot) # Cria um treinador que usa a lista
 
 # Lista de perguntas e respostas que o bot vai usar para aprender.
 # O treinamento é baseado em pares de entrada/saída.
-training_data = [
-    "Oi ?",
-    "Olá redirecionaremos a um de nossos especialistas"
-    "Oi, como vai?",
-    "Estou bem, obrigado por perguntar",
-    "Qual o seu nome?",
-    "Sou Robobot, criado para lhe auxiliar",
-    "preciso de ajuda",
-    "Diga o que deseja....",
-    "Lhe atenderemos assim que possivel"
-]
-
-trainer = ListTrainer(chatbot) # Cria um treinador que usa a lista
-trainer.train(training_data) # para ensinar ao bot as respostas associadas às frases
+trainer.train(
+    ["Oi",
+    "Bem-vindo, amigo!"]
+)
+trainer.train(
+    ["Você e um bot?",
+    "Não, eu sou um chatbot!"]
+)
+trainer.train(
+    ["O que você faz?",
+    "Eu auxilio no treinamento!"]
+)
 
 #Loop de atendimento
 print("Iniciando chat com um de nossos atendentes (sair para encerrar) :")
