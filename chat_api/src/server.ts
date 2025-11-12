@@ -12,10 +12,24 @@ class App {
         this.app = express()
         this.http = http.createServer(this.app)
         this.io = new Server(this.http)
+        this.listenSocket()
+        this.setupRoutes()
     }
 
     listenServer() {
         this.http.listen(3000, () => console.log('server is running on port 3000'))
+    }
+
+    listenSocket() {
+        this.io.on('connection', (socket) => {
+            console.log('user connected =>', socket.id)
+        })
+    }
+
+    setupRoutes() {
+        this.app.get('/', (req, res) => {
+            res.sendFile(__dirname + '/index.html')
+        })
     }
 }
 
