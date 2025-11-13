@@ -13,5 +13,28 @@
         <input id="input" type="text" />
         <button id="button">Enviar</button>
     </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const message = document.getElementById('messages')
+        const input = document.getElementById('input')
+
+        document.addEventListener('submit', (e) => {
+            e.preventDefault()
+
+            if (input.value) {
+                socket.emit('message', input.value)
+                input.value = ''
+                input.focus()   
+            }
+        })
+
+        socket.on("message", (msg) => {
+            const li = document.createElement('li')
+            li.textContent = msg
+            message.appendChild(li)
+        });
+    </script>
 </body>
 </html>
