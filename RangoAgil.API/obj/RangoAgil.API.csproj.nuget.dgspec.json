@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\RangoAgil.API.csproj": {}
+    "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\RangoAgil.API.csproj": {}
   },
   "projects": {
-    "c:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\RangoAgil.API.csproj": {
+    "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\RangoAgil.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\RangoAgil.API.csproj",
+        "projectUniqueName": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\RangoAgil.API.csproj",
         "projectName": "RangoAgil.API",
-        "projectPath": "c:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\RangoAgil.API.csproj",
+        "projectPath": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\RangoAgil.API.csproj",
         "packagesPath": "C:\\Users\\c410\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\obj\\",
+        "outputPath": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

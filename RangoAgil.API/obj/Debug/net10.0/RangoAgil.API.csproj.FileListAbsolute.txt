@@ -27,3 +27,4 @@ c:\Users\c410\Documents\repos\chatbot\RangoAgil.API\obj\Debug\net10.0\refint\Ran
 c:\Users\c410\Documents\repos\chatbot\RangoAgil.API\obj\Debug\net10.0\RangoAgil.API.pdb
 C:\Users\c410\Documents\repos\chatbot\RangoAgil.API\obj\Debug\net10.0\RangoAgil.API.genruntimeconfig.cache
 C:\Users\c410\Documents\repos\chatbot\RangoAgil.API\obj\Debug\net10.0\ref\RangoAgil.API.dll
+C:\Users\c410\Documents\repos\chatbot\RangoAgil.API\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
