@@ -16,4 +16,9 @@ app.MapGet("/rangos", () =>
     return "Rota disponivel";
 });
 
+app.MapGet("/ingredientes", () =>
+{
+    return "Rota disponivel";
+});
+
 app.Run();
