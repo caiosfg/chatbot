@@ -11,4 +11,9 @@ var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
 
+app.MapGet("/rangos", () =>
+{
+    return "Rota disponivel";
+});
+
 app.Run();
