@@ -16,6 +16,12 @@ app.MapGet("/rangos", () =>
     return "Rota disponivel";
 });
 
+app.MapGet("/rangos/{numero}/{nome}", (int numero, string nome) =>
+{
+    return $"Pedido de número : {numero}, cliente : {nome}.";
+});
+
+
 app.MapGet("/ingredientes", () =>
 {
     return "Rota disponivel";
