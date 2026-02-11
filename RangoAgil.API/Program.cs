@@ -21,6 +21,16 @@ app.MapGet("/rangos/{numero}/{nome}", (int numero, string nome) =>
     return $"Pedido de número : {numero}, cliente : {nome}.";
 });
 
+app.MapGet("/rangos-disponiveis", (RangoDbContext rangoDbContext) =>
+{
+    return rangoDbContext.Rangos;
+});
+
+app.MapGet("/pedido/{id}", (RangoDbContext rangoDbContext, int id) =>
+{
+    return rangoDbContext.Rangos.FirstOrDefault(x => x.Id == id);
+});
+
 
 app.MapGet("/ingredientes", () =>
 {
