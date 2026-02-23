@@ -21,16 +21,15 @@ app.MapGet("/rangos/{numero}/{nome}", (int numero, string nome) =>
     return $"Pedido de número : {numero}, cliente : {nome}.";
 });
 
-app.MapGet("/rangos-disponiveis", (RangoDbContext rangoDbContext) =>
+app.MapGet("/rangos-disponiveis", async (RangoDbContext rangoDbContext) =>
 {
-    return rangoDbContext.Rangos;
+    return await rangoDbContext.Rangos.ToListAsync();
 });
 
-app.MapGet("/pedido/{id}", (RangoDbContext rangoDbContext, int id) =>
+app.MapGet("/pedido/{id}", async (RangoDbContext rangoDbContext, int id) =>
 {
-    return rangoDbContext.Rangos.FirstOrDefault(x => x.Id == id);
+    return await rangoDbContext.Rangos.FirstOrDefaultAsync(x => x.Id == id);
 });
-
 
 app.MapGet("/ingredientes", () =>
 {
