@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|c:\\users\\c410\\documents\\repos\\chatbot\\rangoagil.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|c:\\users\\c410\\documents\\repos\\chatbot\\rangoagil.api\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|c:\\users\\c410\\documents\\repos\\chatbot\\rangoagil.api\\dbcontexts\\rangodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|solutionrelative:dbcontexts\\rangodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|c:\\users\\c410\\documents\\repos\\chatbot\\rangoagil.api\\entities\\ingrediente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|solutionrelative:entities\\ingrediente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|c:\\users\\c410\\documents\\repos\\chatbot\\rangoagil.api\\migrations\\rangodbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|solutionrelative:migrations\\rangodbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|c:\\users\\c410\\documents\\repos\\chatbot\\rangoagil.api\\entities\\rango.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|solutionrelative:entities\\rango.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|c:\\users\\c410\\documents\\repos\\chatbot\\rangoagil.api\\migrations\\20260205113143_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|solutionrelative:migrations\\20260205113143_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|c:\\users\\c410\\documents\\repos\\chatbot\\rangoagil.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|c:\\users\\c410\\documents\\repos\\chatbot\\rangoagil.api\\migrations\\20260205113143_initial.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|solutionrelative:migrations\\20260205113143_initial.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{35C3B62E-6D76-6E50-6063-B8C6EEBAC6FC}|RangoAgil.API.csproj|c:\\users\\c410\\documents\\repos\\chatbot\\rangoagil.api\\rangoagil.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -30,72 +38,92 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAMQBAAAAAAAAAIAwwNQBAAAMAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2026-02-09T12:19:21.755Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RangoDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\DbContexts\\RangoDbContext.cs",
-              "RelativeDocumentMoniker": "DbContexts\\RangoDbContext.cs",
-              "ToolTip": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\DbContexts\\RangoDbContext.cs",
-              "RelativeToolTip": "DbContexts\\RangoDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T18:48:03.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Rango.cs",
-              "DocumentMoniker": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\Entities\\Rango.cs",
-              "RelativeDocumentMoniker": "Entities\\Rango.cs",
-              "ToolTip": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\Entities\\Rango.cs",
-              "RelativeToolTip": "Entities\\Rango.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T17:52:59.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAcwCgAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T13:54:47.349Z",
+              "WhenOpened": "2026-02-05T13:20:23.508Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Ingrediente.cs",
-              "DocumentMoniker": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\Entities\\Ingrediente.cs",
-              "RelativeDocumentMoniker": "Entities\\Ingrediente.cs",
-              "ToolTip": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\Entities\\Ingrediente.cs",
-              "RelativeToolTip": "Entities\\Ingrediente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "20260205113143_Initial.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\Migrations\\20260205113143_Initial.Designer.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260205113143_Initial.Designer.cs",
+              "ToolTip": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\Migrations\\20260205113143_Initial.Designer.cs",
+              "RelativeToolTip": "Migrations\\20260205113143_Initial.Designer.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T12:50:38.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-05T13:17:22.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RangoDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\Migrations\\RangoDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\RangoDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\Migrations\\RangoDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\RangoDbContextModelSnapshot.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T13:17:07.661Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "RangoAgil.API",
+              "Title": "20260205113143_Initial.cs",
+              "DocumentMoniker": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\Migrations\\20260205113143_Initial.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260205113143_Initial.cs",
+              "ToolTip": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\Migrations\\20260205113143_Initial.cs",
+              "RelativeToolTip": "Migrations\\20260205113143_Initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T11:31:43.732Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RangoDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\DbContexts\\RangoDbContext.cs",
+              "RelativeDocumentMoniker": "DbContexts\\RangoDbContext.cs",
+              "ToolTip": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\DbContexts\\RangoDbContext.cs",
+              "RelativeToolTip": "DbContexts\\RangoDbContext.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAABsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T13:16:42.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RangoAgil.API.csproj",
               "DocumentMoniker": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\RangoAgil.API.csproj",
               "RelativeDocumentMoniker": "RangoAgil.API.csproj",
               "ToolTip": "C:\\Users\\c410\\Documents\\repos\\chatbot\\RangoAgil.API\\RangoAgil.API.csproj",
               "RelativeToolTip": "RangoAgil.API.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-09T11:26:51.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-09T11:26:51.016Z"
             }
           ]
         }

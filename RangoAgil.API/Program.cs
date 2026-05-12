@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RangoAgil.API.DbContexts;
 
@@ -34,6 +35,12 @@ app.MapGet("/pedido/{id}", async (RangoDbContext rangoDbContext, int id) =>
 app.MapGet("/ingredientes", () =>
 {
     return "Rota disponivel";
+});
+
+
+app.MapGet("/searchname", async (RangoDbContext rangoDbContext, [FromQuery(Name = "name")] string? rangoNome) =>
+{
+    return await rangoDbContext.Rangos.Where(x => x.Nome.Contains(rangoNome)).ToListAsync();
 });
 
 app.Run();
