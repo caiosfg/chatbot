@@ -40,7 +40,14 @@ app.MapGet("/ingredientes", () =>
 
 app.MapGet("/searchname", async (RangoDbContext rangoDbContext, [FromQuery(Name = "name")] string? rangoNome) =>
 {
-    return await rangoDbContext.Rangos.Where(x => x.Nome.Contains(rangoNome)).ToListAsync();
+   var rangosEntity = await rangoDbContext.Rangos
+                                .Where(x => x.Nome.Contains(rangoNome))
+                                .ToListAsync();
+
+    if (rangosEntity.Count <= 0 || rangosEntity == null)
+        return Results.NoContent();
+    else
+        return Results.Ok(rangosEntity);
 });
 
 app.Run();
