@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RangoAgil.API.DbContexts;
+using RangoAgil.API.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,6 +50,20 @@ app.MapGet("/searchname", async (RangoDbContext rangoDbContext, [FromQuery(Name 
         return Results.NoContent();
     else
         return Results.Ok(rangosEntity);
+});
+
+app.MapGet("/searchall", async Task<Results<NoContent, Ok<List<Rango>>>>
+    (RangoDbContext rangoDbContext,
+    [FromQuery(Name = "name")] string? rangoNome) =>
+{
+    var rangosEntity = await rangoDbContext.Rangos
+                                 .Where(x => rangoNome == null || x.Nome.ToLower().Contains(rangoNome.ToLower()))
+                                 .ToListAsync();
+
+    if (rangosEntity.Count <= 0 || rangosEntity == null)
+        return TypedResults.NoContent();
+    else
+        return TypedResults.Ok(rangosEntity);
 });
 
 app.Run();
