@@ -66,4 +66,11 @@ app.MapGet("/searchall", async Task<Results<NoContent, Ok<List<Rango>>>>
         return TypedResults.Ok(rangosEntity);
 });
 
+app.MapGet("/rangos/{rangoId}/ingredientes", async (RangoDbContext rangoDbContext, int rangoId) =>
+{
+    return await rangoDbContext.Rangos
+                                .Include(rango => rango.Ingredientes)
+                                .FirstOrDefaultAsync(rango => rango.Id == rangoId);
+});
+
 app.Run();
