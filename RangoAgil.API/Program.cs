@@ -1,8 +1,10 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RangoAgil.API.DbContexts;
 using RangoAgil.API.Entities;
+using RangoAgil.API.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -73,6 +75,17 @@ app.MapGet("/rangos/{rangoId}/ingredientes", async (RangoDbContext rangoDbContex
     return await rangoDbContext.Rangos
                                 .Include(rango => rango.Ingredientes)
                                 .FirstOrDefaultAsync(rango => rango.Id == rangoId);
+});
+
+
+app.MapGet("/rangos/{rangoId}/ingredientess", async (
+    RangoDbContext rangoDbContext,
+    IMapper mapper,
+    int rangoId) =>
+{
+    return mapper.Map<IEnumerable<IngredienteDTO>>((await rangoDbContext.Rangos
+                                .Include(rango => rango.Ingredientes)
+                                .FirstOrDefaultAsync(rango => rango.Id == rangoId))?.Ingredientes);
 });
 
 app.Run();
