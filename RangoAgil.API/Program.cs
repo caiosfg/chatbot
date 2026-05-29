@@ -88,4 +88,15 @@ app.MapGet("/rangos/{rangoId}/ingredientess", async (
                                 .FirstOrDefaultAsync(rango => rango.Id == rangoId))?.Ingredientes);
 });
 
+
+app.MapGet("/rangosxxx/{id: int}", async (
+    RangoDbContext rangoDbContext,
+    IMapper mapper,
+    int id) =>
+{
+    return mapper.Map<RangoDTO>(await rangoDbContext.Rangos
+                                .FirstOrDefaultAsync(x => x.Id == id));
+});
+
+
 app.Run();
