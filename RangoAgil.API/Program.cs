@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RangoAgil.API.DbContexts;
-using RangoAgil.API.Entities;
 using RangoAgil.API.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -56,8 +55,9 @@ app.MapGet("/searchname", async (RangoDbContext rangoDbContext, [FromQuery(Name 
         return Results.Ok(rangosEntity);
 });
 
-app.MapGet("/searchall", async Task<Results<NoContent, Ok<List<Rango>>>>
+app.MapGet("/searchall", async Task<Results<NoContent, Ok<IEnumerable<RangoDTO>>>>
     (RangoDbContext rangoDbContext,
+    IMapper mapper,
     [FromQuery(Name = "name")] string? rangoNome) =>
 {
     var rangosEntity = await rangoDbContext.Rangos
@@ -67,7 +67,7 @@ app.MapGet("/searchall", async Task<Results<NoContent, Ok<List<Rango>>>>
     if (rangosEntity.Count <= 0 || rangosEntity == null)
         return TypedResults.NoContent();
     else
-        return TypedResults.Ok(rangosEntity);
+        return TypedResults.Ok(mapper.Map<IEnumerable<RangoDTO>>(rangosEntity));
 });
 
 app.MapGet("/rangos/{rangoId}/ingredientes", async (RangoDbContext rangoDbContext, int rangoId) =>
@@ -89,7 +89,7 @@ app.MapGet("/rangos/{rangoId}/ingredientess", async (
 });
 
 
-app.MapGet("/rangosxxx/{id: int}", async (
+app.MapGet("/rangosxxx/{id:int}", async (
     RangoDbContext rangoDbContext,
     IMapper mapper,
     int id) =>
