@@ -97,19 +97,31 @@ app.MapGet("/rangosxxx/{id:int}", async (
 {
     return mapper.Map<RangoDTO>(await rangoDbContext.Rangos
                                 .FirstOrDefaultAsync(x => x.Id == id));
-});
+}).WithName("GetRango");
 
 app.MapPost("/rango", async (
     RangoDbContext rangoDbContext,
     IMapper mapper,
-    [FromBody] RangoParaCriacaoDTO rangoParaCriacaoDTO) =>
+    [FromBody] RangoParaCriacaoDTO rangoParaCriacaoDTO,
+    LinkGenerator linkGenerator,
+    HttpContext httpContext
+    ) =>
 {
     var rangoEntity = mapper.Map<Rango>(rangoParaCriacaoDTO);
     rangoDbContext.Add(rangoEntity);
     await rangoDbContext.SaveChangesAsync();
 
     var rangoToReturn = mapper.Map<RangoDTO>(rangoEntity);
-    return TypedResults.Ok(rangoToReturn);
+
+    var linkToReturn = linkGenerator.GetUriByName(
+        httpContext,
+        "GetRango",
+        new { id = rangoToReturn.Id }
+        );
+
+    return TypedResults.Created(
+        linkToReturn, rangoToReturn
+    );
 });
 
 
