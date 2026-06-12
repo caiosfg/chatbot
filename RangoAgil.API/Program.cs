@@ -125,4 +125,23 @@ app.MapPost("/rango", async (
 });
 
 
+app.MapPut("/rangosxxx/{id:int}", async Task<Results<NotFound, Ok>> (
+    RangoDbContext rangoDbContext,
+    IMapper mapper,
+    int id,
+    [FromBody] RangoParaAtualizacaoDTO rangoParaAtualizacaoDTO) =>
+{
+    var rangosEntity = await rangoDbContext.Rangos.FirstOrDefaultAsync(x => x.Id == id);
+
+    if (rangosEntity == null)
+        return TypedResults.NotFound();
+
+    mapper.Map(rangoParaAtualizacaoDTO, rangosEntity);
+
+    await rangoDbContext.SaveChangesAsync();
+
+    return TypedResults.Ok();
+});
+
+
 app.Run();
