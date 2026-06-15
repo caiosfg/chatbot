@@ -5,6 +5,10 @@
 .vs
 obj
 bin/Debug/net10.0
+*.db
+*.db-shm
+*.db-wal
+
 
 # dotenv files
 .env
