@@ -18,12 +18,15 @@ var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
 
-app.MapGet("/rangos-disponiveis", async (RangoDbContext rangoDbContext) =>
+var rangosEndpoints = app.MapGroup("/rangos");
+var rangosComIdEndpoints = rangosEndpoints.MapGroup("/{rangoId:int}");
+
+rangosEndpoints.MapGet("", async (RangoDbContext rangoDbContext) =>
 {
     return await rangoDbContext.Rangos.ToListAsync();
 });
 
-app.MapGet("/rangosxxx/{rangoId:int}", async (
+rangosComIdEndpoints.MapGet("", async (
     RangoDbContext rangoDbContext,
     IMapper mapper,
     int rangoId) =>
@@ -32,7 +35,7 @@ app.MapGet("/rangosxxx/{rangoId:int}", async (
                                 .FirstOrDefaultAsync(x => x.Id == rangoId));
 }).WithName("GetRango");
 
-app.MapPost("/rangos", async (
+rangosEndpoints.MapPost("", async (
     RangoDbContext rangoDbContext,
     IMapper mapper,
     [FromBody] RangoParaCriacaoDTO rangoParaCriacaoDTO,
@@ -58,7 +61,7 @@ app.MapPost("/rangos", async (
 });
 
 
-app.MapPut("/rangos/{rangoId:int}", async Task<Results<NotFound, Ok>> (
+rangosComIdEndpoints.MapPut("", async Task<Results<NotFound, Ok>> (
     RangoDbContext rangoDbContext,
     IMapper mapper,
     int rangoId,
@@ -76,7 +79,7 @@ app.MapPut("/rangos/{rangoId:int}", async Task<Results<NotFound, Ok>> (
     return TypedResults.Ok();
 });
 
-app.MapDelete("/rangos/{rangoId:int}", async Task<Results<NotFound, NoContent>> (
+rangosComIdEndpoints.MapDelete("", async Task<Results<NotFound, NoContent>> (
     RangoDbContext rangoDbContext,
     int rangoId,
     [FromBody] RangoParaAtualizacaoDTO rangoParaAtualizacaoDTO) =>
