@@ -19,6 +19,7 @@ var app = builder.Build();
 app.MapGet("/", () => "Hello World!");
 
 var rangosEndpoints = app.MapGroup("/rangos");
+
 var rangosComIdEndpoints = rangosEndpoints.MapGroup("/{rangoId:int}");
 
 rangosEndpoints.MapGet("", async (RangoDbContext rangoDbContext) =>
