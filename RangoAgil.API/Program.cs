@@ -16,25 +16,10 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.MapRangosEndpoints();
 
-var rangosEndpoints = app.MapGroup("/rangos");
+app.Run();
 
-var rangosComIdEndpoints = rangosEndpoints.MapGroup("/{rangoId:int}");
-
-rangosEndpoints.MapGet("", async (RangoDbContext rangoDbContext) =>
-{
-    return await rangoDbContext.Rangos.ToListAsync();
-});
-
-rangosComIdEndpoints.MapGet("", async (
-    RangoDbContext rangoDbContext,
-    IMapper mapper,
-    int rangoId) =>
-{
-    return mapper.Map<RangoDTO>(await rangoDbContext.Rangos
-                                .FirstOrDefaultAsync(x => x.Id == rangoId));
-}).WithName("GetRango");
 
 rangosEndpoints.MapPost("", async (
     RangoDbContext rangoDbContext,
@@ -97,4 +82,4 @@ rangosComIdEndpoints.MapDelete("", async Task<Results<NotFound, NoContent>> (
 });
 
 
-app.Run();
+
