@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,91 +11,121 @@ public static class RangosEndpoints
 {
     public static IEndpointRouteBuilder MapRangosEndpoints(this IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("/rangos");
+        var group = app.MapGroup("/rangos")
+            .WithTags("Rangos");
 
-        group.MapGet("/", GetAll);
-        group.MapGet("/{rangoId:int}", GetById).WithName("GetRango");
-        group.MapPost("/", Create);
-        group.MapPut("/{rangoId:int}", Update);
-        group.MapDelete("/{rangoId:int}", Delete);
+        group.MapGet("/", GetAll)
+            .WithName("GetRangos")
+            .WithSummary("Lista todos os rangos");
+
+        group.MapGet("/{rangoId:int}", GetById)
+            .WithName("GetRango")
+            .WithSummary("Obtém um rango pelo Id");
+
+        group.MapPost("/", Create)
+            .WithSummary("Cria um novo rango");
+
+        group.MapPut("/{rangoId:int}", Update)
+            .WithSummary("Atualiza um rango");
+
+        group.MapDelete("/{rangoId:int}", Delete)
+            .WithSummary("Remove um rango");
 
         return app;
     }
 
-    private static Task<List<Rango>> GetAll(RangoDbContext context)
-        => context.Rangos.ToListAsync();
+    private static async Task<Ok<List<RangoDTO>>> GetAll(
+        RangoDbContext context,
+        IMapper mapper,
+        CancellationToken cancellationToken)
+    {
+        var rangos = await context.Rangos
+            .AsNoTracking()
+            .ProjectTo<RangoDTO>(mapper.ConfigurationProvider)
+            .ToListAsync(cancellationToken);
+
+        return TypedResults.Ok(rangos);
+    }
 
     private static async Task<Results<NotFound, Ok<RangoDTO>>> GetById(
         RangoDbContext context,
         IMapper mapper,
-        int rangoId)
+        int rangoId,
+        CancellationToken cancellationToken)
     {
-        var rango = await GetRango(context, rangoId);
+        var rango = await context.Rangos
+            .AsNoTracking()
+            .Where(r => r.Id == rangoId)
+            .ProjectTo<RangoDTO>(mapper.ConfigurationProvider)
+            .FirstOrDefaultAsync(cancellationToken);
 
-        if (rango is null)
-            return TypedResults.NotFound();
-
-        return TypedResults.Ok(mapper.Map<RangoDTO>(rango));
+        return rango is null
+            ? TypedResults.NotFound()
+            : TypedResults.Ok(rango);
     }
 
-    private static async Task<Created<RangoDTO>> Create(
+    private static async Task<CreatedAtRoute<RangoDTO>> Create(
         RangoDbContext context,
         IMapper mapper,
         [FromBody] RangoParaCriacaoDTO rangoParaCriacaoDTO,
-        LinkGenerator linkGenerator,
-        HttpContext httpContext)
+        CancellationToken cancellationToken)
     {
         var rango = mapper.Map<Rango>(rangoParaCriacaoDTO);
 
         context.Rangos.Add(rango);
-        await context.SaveChangesAsync();
+
+        await context.SaveChangesAsync(cancellationToken);
 
         var rangoDto = mapper.Map<RangoDTO>(rango);
 
-        var link = linkGenerator.GetUriByName(
-            httpContext,
+        return TypedResults.CreatedAtRoute(
+            rangoDto,
             "GetRango",
             new { rangoId = rangoDto.Id });
-
-        return TypedResults.Created(link!, rangoDto);
     }
 
-    private static async Task<Results<NotFound, Ok>> Update(
+    private static async Task<Results<NotFound, NoContent>> Update(
         RangoDbContext context,
         IMapper mapper,
         int rangoId,
-        [FromBody] RangoParaAtualizacaoDTO rangoParaAtualizacaoDTO)
+        [FromBody] RangoParaAtualizacaoDTO rangoParaAtualizacaoDTO,
+        CancellationToken cancellationToken)
     {
-        var rango = await GetRango(context, rangoId);
+        var rango = await FindRangoAsync(context, rangoId, cancellationToken);
 
         if (rango is null)
             return TypedResults.NotFound();
 
         mapper.Map(rangoParaAtualizacaoDTO, rango);
 
-        await context.SaveChangesAsync();
+        await context.SaveChangesAsync(cancellationToken);
 
-        return TypedResults.Ok();
+        return TypedResults.NoContent();
     }
 
     private static async Task<Results<NotFound, NoContent>> Delete(
         RangoDbContext context,
-        int rangoId)
+        int rangoId,
+        CancellationToken cancellationToken)
     {
-        var rango = await GetRango(context, rangoId);
+        var rango = await FindRangoAsync(context, rangoId, cancellationToken);
 
         if (rango is null)
             return TypedResults.NotFound();
 
         context.Rangos.Remove(rango);
 
-        await context.SaveChangesAsync();
+        await context.SaveChangesAsync(cancellationToken);
 
         return TypedResults.NoContent();
     }
 
-    private static ValueTask<Rango?> GetRango(
+    private static Task<Rango?> FindRangoAsync(
         RangoDbContext context,
-        int id)
-        => context.Rangos.FindAsync(id);
+        int id,
+        CancellationToken cancellationToken)
+    {
+        return context.Rangos
+            .FirstOrDefaultAsync(r => r.Id == id, cancellationToken);
+    }
 }
