@@ -14,7 +14,7 @@ public class RangoAgilProfile : Profile
         CreateMap<Ingrediente, IngredienteDTO>()
             .ForMember(
                 ingredient => ingredient.RangoId,
-                o => o.MapFrom(src => src.Rangos.First().Id)
+                o => o.MapFrom(src => src.Rangos.Select(r => r.Id).FirstOrDefault())
             );
     }
 }
