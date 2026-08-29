@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using RangoAgil.API.DbContexts;
 using Serilog;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,8 +35,8 @@ app.UseExceptionHandler(errorApp =>
 {
     errorApp.Run(async context =>
     {
-        context.Response.StatusCode = 500;
-        context.Response.ContentType = "application/problem+json";
+        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+        context.Response.ContentType = "application/json";
         await context.Response.WriteAsJsonAsync(new { title = "An internal error occurred." });
     });
 });
