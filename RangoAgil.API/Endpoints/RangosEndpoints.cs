@@ -50,6 +50,7 @@ public static class RangosEndpoints
     private static async Task<Results<NotFound, Ok<RangoDTO>>> GetById(
         RangoDbContext context,
         IMapper mapper,
+        ILogger<RangoDTO> logger,
         int rangoId,
         CancellationToken cancellationToken)
     {
@@ -59,9 +60,15 @@ public static class RangosEndpoints
             .ProjectTo<RangoDTO>(mapper.ConfigurationProvider)
             .FirstOrDefaultAsync(cancellationToken);
 
-        return rango is null
-            ? TypedResults.NotFound()
-            : TypedResults.Ok(rango);
+        if (rango is null)
+        {
+            logger.LogWarning("Rango with Id {RangoId} not found.", rangoId);
+            return TypedResults.NotFound();
+        }
+        else
+        {
+            return TypedResults.Ok(rango);
+        }
     }
 
     private static async Task<CreatedAtRoute<RangoDTO>> Create(
