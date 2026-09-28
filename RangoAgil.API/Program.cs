@@ -25,6 +25,9 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+//força o https
+app.UseHsts();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
